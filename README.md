@@ -15,18 +15,18 @@ Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who wil
 <br/>
 ## 프로젝트 수행 과정
 1. Introduction
-Data description
+    - Data description
 2. Basic Exploration  
-Read dataset  
-Some information  
-Data visualization  
+    - Read dataset  
+    - Some information  
+    - Data visualization  
 3. Data preprocessing  
 4. Machine Learning model  
-Logistic Regression  
-Random Forest Classifier  
-Hyperparameter Tuning of Random Forest  
-Decision Tree Classifier  
-Hyperparameter Tuning of Decision Tree  
+    - Logistic Regression  
+    - Random Forest Classifier  
+    - Hyperparameter Tuning of Random Forest  
+    - Decision Tree Classifier  
+    - Hyperparameter Tuning of Decision Tree  
 5. Conclusion
 ## 모델의 validation dataset에 대한 accuracy (소숫점 다섯 째 자리에서 반올림)
 | Model | accuracy |
