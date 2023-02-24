@@ -13,7 +13,7 @@ Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who wil
 
 위 데이터셋은 고객이 자동차 보험에 관심이 있는지 여부를 예측하기 위해 인구 통계(성별, 연령, 지역 코드 유형), 차량(차량 연령, 손상), 정책(프리미엄, 소싱 채널) 등에 대한 정보에 대한 데이터를 가지고 있습니다.  
 <br/>
-## 프로젝트 수행 과정
+## 프로젝트 목록
 1. Introduction
     - Data description
 2. Basic Exploration  
@@ -28,6 +28,18 @@ Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who wil
     - Decision Tree Classifier  
     - Hyperparameter Tuning of Decision Tree  
 5. Conclusion
+<br/>
+
+## 프로젝트 수행 과정
+- 훈련 데이터 세트와 테스트 데이터 세트는 모두 non-null 값을 가집니다. 따라서 결측값을 처리할 필요가 없었습니다.
+- 그래프를 통해 특성에 따른 관심 여부를 살펴보았습니다.
+- 쓸 일 없는 ID 열은 train 및 test 데이터에서 모두 제거하고, 범주형 데이터를 숫자 데이터로 분류하였습니다.
+- 속성 간의 상관 관계를 확인하고, 높은 상관 관계인 열은 더 나은 정확도를 위해 MinMaxScaler에서 제외 하였습니다.
+- MinMaxScaler를 사용하여 숫자 데이터의 크기를 조정하였습니다.
+- train/validation 데이터 셋으로 나누어 주었습니다.
+- Logistic Regression, Random Forest Classifier, Hyperparameter Tuning of Random Forest,  Decision Tree Classifier, Hyperparameter Tuning of Decision Tree을 사용하였고, 모델의 accuracy를 비교하였습니다.
+<br/>
+
 ## 모델의 validation dataset에 대한 accuracy (소숫점 다섯 째 자리에서 반올림)
 | Model | accuracy |
 |:----------------------------------------|:-------|
@@ -36,10 +48,14 @@ Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who wil
 | Hyperparameter Tuning of Random Forest  | 0.8652 |
 | Decision Tree Classifier                | 0.8218 |
 | Hyperparameter Tuning of Decision Tree  | 0.8751 |
+<br/>
+
 ## 최종 모델
 Hyperparameter Tuning of Decision Tree
 - dataset에 대한 결과
     - accuracy: 약 0.8751
+<br/>
+
 ## 결론
 특정 회사의 고객 정보 등을 통해서 자동차보험에 관심 여부를 예측하는 모델을 만들고자 하였습니다. 그 결과 하이퍼파라미터 튜닝한 의사결정 트리가 가장 높은 정확도를 보여주었다. 추가로, 자동차 보험 마케팅에도 효과전인 전략을 제시할 수 있습니다.  
 
