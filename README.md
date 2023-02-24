@@ -37,8 +37,8 @@ Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who wil
 | Decision Tree Classifier                | 0.8218 |
 | Hyperparameter Tuning of Decision Tree  | 0.8751 |
 ## 최종 모델
-dataset에 대한 결과(Hyperparameter Tuning of Decision Tree)
-- accuracy: 약 0.8751
+- dataset에 대한 결과(Hyperparameter Tuning of Decision Tree)
+    - accuracy: 약 0.8751
 ## 결론
 특정 회사의 고객 정보 등을 통해서 자동차보험에 관심 여부를 예측하는 모델을 만들고자 하였습니다. 그 결과 하이퍼파라미터 튜닝한 의사결정 트리가 가장 높은 정확도를 보여주었다. 추가로, 자동차 보험 마케팅에도 효과전인 전략을 제시할 수 있습니다.  
 
