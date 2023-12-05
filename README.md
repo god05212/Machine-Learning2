@@ -3,7 +3,9 @@
 프로젝트 기간: 2023/01/16(월) ~ 2023/01/30(월)  
 <br/>
 ## 개요
-건강 보험 소유자가 자동차 보험에도 관심을 가질지 예측하는 모델을 만드는 프로젝트입니다. 보험 상품은 기본적으로 미래를 예측하는 모델을 바탕으로 설계됩니다. 생명보험의 경우 대부분의 보험 회사는 평균 수명 예측 모델을 구축하고 있거나, [캐글](https://www.kaggle.com/anmolkumar/health-insurance-cross-sell-prediction)처럼 보험에 대한 관심 여부를 예측하는 모델을 구축하기도 합니다. 이러한 모델들을 바탕으로 보험료를 얼마 책정할지, 혹은 보험금을 얼마나 지급해줘야 하는지, 혹은 보험사의 기대 이익이 얼마가 될지 계산 할 수 있습니다. 이처럼 고객이 자동차 보험에 관심을 가질지 예측하는 모델을 구축하면 회사에 매우 도움이 됩니다. 그에 따라 해당 고객에게 다가가 비즈니스 모델과 수익을 최적화 하기 위한 커뮤니케이션 전략을 계획할 수 있기 때문입니다. 따라서, 특정 회사의 고객 정보 등을 통해서 자동차보험에 관심 여부를 예측하는 모델을 만들고자 하였습니다.  
+자동차 보험에 대한 고객의 관심 여부를 예측하는 모델을 개발하는 프로젝트를 진행하였습니다. 보험 상품은 미래를 예측하는 모델을 기반으로 설계되는데, 생명보험의 경우 평균 수명 예측 모델이나 보험에 대한 관심 여부를 예측하는 모델을 구축하고 있습니다. 이러한 모델을 활용하여 보험료의 책정이나 보험금 지급 등 보험사의 이익을 최적화할 수 있습니다.
+
+따라서, 특정 회사의 고객 정보를 활용하여 자동차 보험에 대한 관심 여부를 예측하는 모델을 개발하고자 하였습니다. 이 모델을 통해 고객이 자동차 보험에 관심을 가질지 예측할 수 있으며, 이를 기반으로 비즈니스 모델과 수익을 최적화하기 위한 커뮤니케이션 전략을 계획할 수 있어 보험회사에 매우 도움이 될 것으로 예상됩니다.  
 <br/>
 ## 사용한 데이터셋
 Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who will be interested in Vehicle Insurance  
@@ -32,12 +34,12 @@ Health Insurance Cross Sell Prediction: Predict Health Insurance Owners' who wil
 
 ## 프로젝트 수행 과정
 - 훈련 데이터 세트와 테스트 데이터 세트는 모두 non-null 값을 가집니다. 따라서 결측값을 처리할 필요가 없었습니다.
-- 그래프를 통해 특성에 따른 관심 여부를 살펴보았습니다.
-- 쓸 일 없는 ID 열은 train 및 test 데이터에서 모두 제거하고, 범주형 데이터를 숫자 데이터로 분류하였습니다.
-- 속성 간의 상관 관계를 확인하고, 높은 상관 관계인 열은 더 나은 정확도를 위해 MinMaxScaler에서 제외 하였습니다.
-- MinMaxScaler를 사용하여 숫자 데이터의 크기를 조정하였습니다.
+- 히스토그램과 상자 그림을 사용하여 데이터를 시각화하였습니다. 성별, 운전면허 여부, 지역 코드, 과거 자동차에 손상을 입힌 경험의 유무에 따른 관심 여부를 확인하기 위해 plotly 라이브러리를 사용하여 히스토그램을 그렸습니다. 그리고 나이, 건강보험 보유 기간에 따른 관심 여부를 확인하기 위해 seaborn 라이브러리를 사용하여 상자 그림을 그렸습니다.
+- ID 열은 식별자 역할을 하기에, train 및 test 데이터에서 모두 제거하고, 범주형 데이터를 숫자 데이터로 분류하였습니다.
+- 속성 간의 상관 관계를 확인하기 위해 `sns.heatmap(train.corr(), annot=True)`를 사용하여 히트맵을 그렸습니다. 이를 통해 속성들 간의 상관계수를 시각적으로 확인할 수 있었습니다.
+- 상관 관계가 높은 열은 서로 강한 관련성을 가지고 있을 수 있습니다. 이러한 열을 동시에 모델에 포함 시키면 다중공선성 문제가 발생할 수 있습니다. 다중공선성은 모델의 안정성을 저해하고 예측력을 감소시킬 수 있으므로 상관 관계가 높은 열을 제외하고 Min-Max 스케일링을 적용하여 모델의 안정성을 높이고 예측력을 향상 시키고자 하였습니다.
 - train/validation 데이터 셋으로 나누어 주었습니다.
-- Logistic Regression, Random Forest Classifier, Hyperparameter Tuning of Random Forest,  Decision Tree Classifier, Hyperparameter Tuning of Decision Tree을 사용하였고, 모델의 accuracy를 비교하였습니다.
+- Logistic Regression, Random Forest Classifier, Hyperparameter Tuning of Random Forest,  Decision Tree Classifier, Hyperparameter Tuning of Decision Tree를 사용하였고, 모델의 accuracy를 비교하였습니다.
 <br/>
 
 ## 모델의 validation dataset에 대한 accuracy (소숫점 다섯 째 자리에서 반올림)
